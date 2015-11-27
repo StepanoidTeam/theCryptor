@@ -12,9 +12,6 @@ public class Fadeout : MonoBehaviour
 
     public float Delay = 2;
     public float Speed = 1;
-
-    public Image FadeOverlay;
-
     
     void SymbolAnimationEnd()
     {
