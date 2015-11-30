@@ -9,9 +9,6 @@ public class Fadeout : MonoBehaviour
 
     public event FadeEventHandler OnFade;
     #endregion
-
-    public float Delay = 2;
-    public float Speed = 1;
     
     void SymbolAnimationEnd()
     {
