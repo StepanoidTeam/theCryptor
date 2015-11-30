@@ -45,7 +45,7 @@ public class FallingSymbols : MonoBehaviour
 
             yield return new WaitForSeconds(DelayBetweenSymbols);
         }
-        currentSymbol.GetComponent<Fadeout>().OnFade += LastSymbol_OnFade;
+        currentSymbol.GetComponent<FallingSymbol>().OnFade += LastSymbol_OnFade;
     }
 
     private void LastSymbol_OnFade(GameObject sender)

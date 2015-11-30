@@ -4,6 +4,11 @@ using UnityEngine.EventSystems;
 
 public class FallingSymbol : MonoBehaviour
 {
+    #region Events
+    public delegate void FadeEventHandler(GameObject sender);
+
+    public event FadeEventHandler OnFade;
+    #endregion
 
     public GameObject DestroyEffect;
 
@@ -30,6 +35,17 @@ public class FallingSymbol : MonoBehaviour
     {
         checkpointSymbols = GetComponentInParent<Gameplay>();
         textBox = GetComponent<UnityEngine.UI.Text>();
+    }
+
+    
+
+    void SymbolAnimationEnd()
+    {
+        if (OnFade != null)
+        {
+
+            OnFade(gameObject);
+        }
     }
 
     public void OnPointerClickWithBaseData(BaseEventData data)
