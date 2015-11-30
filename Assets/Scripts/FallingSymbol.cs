@@ -43,7 +43,7 @@ public class FallingSymbol : MonoBehaviour
     {
         if (OnFade != null)
         {
-
+            IsClickable = false;
             OnFade(gameObject);
         }
     }
