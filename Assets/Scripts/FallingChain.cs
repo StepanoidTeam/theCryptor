@@ -2,13 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class FallingSymbols : MonoBehaviour
+public class FallingChain : MonoBehaviour
 {
     public static string[] symbols;
 
     public GameObject SymbolGo;
-    public GameObject Container;
-    
 
     public float StartDelayRandomMax = 1;
     public float DelayBetweenSymbols = 1;
@@ -63,9 +61,9 @@ public class FallingSymbols : MonoBehaviour
     {
         var go = Instantiate(SymbolGo);
         var txt = go.GetComponent<Text>();
-        txt.rectTransform.SetParent(Container.transform);
+        txt.rectTransform.SetParent(gameObject.transform);
         txt.text = symbol;
-        txt.transform.localPosition = Container.transform.localPosition;
+        txt.transform.localPosition = gameObject.transform.localPosition;
         go.transform.localScale = new Vector3(1, 1, 1);
         txt.rectTransform.localScale = new Vector3(1, 1, 1);
 
