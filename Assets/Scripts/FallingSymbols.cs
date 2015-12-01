@@ -39,7 +39,9 @@ public class FallingSymbols : MonoBehaviour
                 currentSymbol = AddSymbol(checkpointSymbols.GetRandomSymbol());
             }
             else {// other simple symbols
-                currentSymbol = AddSymbol(Random.Range(0, 10).ToString());
+
+                var symbol = Random.Range(10, 99).ToString();
+                currentSymbol = AddSymbol(symbol);
             }
 
 
