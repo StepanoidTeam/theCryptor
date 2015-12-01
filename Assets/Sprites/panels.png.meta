@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 5e7416f52e2b22040a6ccfa352c68d72
-timeCreated: 1446510437
+timeCreated: 1448979792
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -62,7 +62,7 @@ TextureImporter:
         height: 86
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 41, y: 16, z: 22, w: 22}
+      border: {x: 42, y: 17, z: 23, w: 23}
     - name: panel_timer
       rect:
         serializedVersion: 2

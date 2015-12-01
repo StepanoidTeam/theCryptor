@@ -9,7 +9,7 @@ public class Gameplay : MonoBehaviour
 
 
     public GameObject CheckpointSymbolContainer;
-    public GameObject SymbolGo;
+    public SymbolToFind SymbolGo;
 
     public GameObject CheckpointGateContainer;
     public GameObject GateGo;
@@ -110,17 +110,21 @@ public class Gameplay : MonoBehaviour
         // yield return null;
     }
 
-    GameObject AddSymbol(string symbol)
+    SymbolToFind AddSymbol(string symbol)
     {
         Symbols.Add(symbol);
 
-        var go = Instantiate(SymbolGo);
-        var txt = go.GetComponent<Text>();
-        txt.rectTransform.SetParent(CheckpointSymbolContainer.transform);
-        txt.text = symbol;
-        go.transform.localScale = new Vector3(1, 1, 1);
-        txt.rectTransform.localScale = new Vector3(1, 1, 1);
-        return go;
+        SymbolToFind stfGo = Instantiate(SymbolGo);
+        //var txt = stfGo.GetComponentInChildren<Text>();
+        stfGo.transform.SetParent(CheckpointSymbolContainer.transform);
+        //txt.rectTransform.SetParent(CheckpointSymbolContainer.transform);
+        
+        //txt.text = symbol;
+        stfGo.transform.localScale = new Vector3(1, 1, 1);
+        
+        stfGo.Text = symbol;
+        //txt.rectTransform.localScale = new Vector3(1, 1, 1);
+        return stfGo;
     }
 
     internal string GetRandomSymbol()
@@ -155,8 +159,7 @@ public class Gameplay : MonoBehaviour
 
         foreach (var checkpointSymbol in CheckpointSymbolContainer.transform.OfType<Transform>().ToList())
         {
-            var es = checkpointSymbol.GetComponent<FallingSymbol>();
-            Destroy(es.gameObject);
+            Destroy(checkpointSymbol.gameObject);
         }
     }
 
@@ -167,9 +170,9 @@ public class Gameplay : MonoBehaviour
 
         foreach (var checkpointSymbol in CheckpointSymbolContainer.transform.OfType<Transform>().ToList())
         {
-            var es = checkpointSymbol.GetComponent<FallingSymbol>();
+            var es = checkpointSymbol.GetComponent<SymbolToFind>();
 
-            if (es.SymbolText == symbol)
+            if (es.Text == symbol)
             {
                 Destroy(es.gameObject);
                 break;
