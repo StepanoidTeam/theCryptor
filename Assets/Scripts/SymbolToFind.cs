@@ -23,7 +23,7 @@ public class SymbolToFind : MonoBehaviour {
 
     void Awake()
     {
-        textBox = GetComponent<SymbolToFind>().GetComponentInChildren<UnityEngine.UI.Text>();
+        textBox = GetComponentInChildren<UnityEngine.UI.Text>();
     }
     
 }

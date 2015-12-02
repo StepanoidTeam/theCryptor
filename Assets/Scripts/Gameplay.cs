@@ -20,7 +20,7 @@ public class Gameplay : MonoBehaviour
 
     public Text LevelText;
 
-    public List<string> Symbols;
+    public List<string> CurrentSymbols;
 
     public int SymbolCount = 1;
 
@@ -40,13 +40,10 @@ public class Gameplay : MonoBehaviour
 
     void Update()
     {
-
         if (Input.GetKey(KeyCode.Escape))
         {
             PauseGame();
-            
         }
-
     }
 
     void ShowCurrentLevel()
@@ -54,6 +51,7 @@ public class Gameplay : MonoBehaviour
         LevelText.text = string.Format("lvl {0}", currentLevel);
     }
 
+    #region gates
     private void GenerateGates(int gateCount)
     {
         RemoveAllGates();
@@ -91,9 +89,10 @@ public class Gameplay : MonoBehaviour
         }
 
     }
+    #endregion
 
 
-
+    #region symbols
     void GenerateSymbols()
     {
         var alphabet = new List<string>() { "A", "B", "C", "D", "E", "F", "G", "H", "X", "Y", "Z" };
@@ -110,28 +109,24 @@ public class Gameplay : MonoBehaviour
         // yield return null;
     }
 
-    SymbolToFind AddSymbol(string symbol)
+    void AddSymbol(string symbol)
     {
-        Symbols.Add(symbol);
+        CurrentSymbols.Add(symbol);
 
         SymbolToFind stfGo = Instantiate(SymbolGo);
-        //var txt = stfGo.GetComponentInChildren<Text>();
         stfGo.transform.SetParent(CheckpointSymbolContainer.transform);
-        //txt.rectTransform.SetParent(CheckpointSymbolContainer.transform);
-        
-        //txt.text = symbol;
+
         stfGo.transform.localScale = new Vector3(1, 1, 1);
-        
+
         stfGo.Text = symbol;
-        //txt.rectTransform.localScale = new Vector3(1, 1, 1);
-        return stfGo;
+        //return stfGo;
     }
 
     internal string GetRandomSymbol()
     {
-        if (Symbols.Count > 0)
+        if (CurrentSymbols.Count > 0)
         {
-            return Symbols[Random.Range(0, Symbols.Count - 1)];
+            return CurrentSymbols[Random.Range(0, CurrentSymbols.Count - 1)];
         }
         return "Error";//todo: throw ex instead
     }
@@ -139,12 +134,12 @@ public class Gameplay : MonoBehaviour
     public bool CheckSymbol(string symbol)
     {
 
-        var symbolExists = Symbols.Contains(symbol);
+        var symbolExists = CurrentSymbols.Contains(symbol);
 
         if (symbolExists)
         {
             RemoveSymbol(symbol);
-            if (Symbols.Count == 0)
+            if (CurrentSymbols.Count == 0)
             {
                 NextCheckpoint();
             }
@@ -155,7 +150,7 @@ public class Gameplay : MonoBehaviour
 
     public void RemoveAllSymbols()
     {
-        Symbols.Clear();
+        CurrentSymbols.Clear();
 
         foreach (var checkpointSymbol in CheckpointSymbolContainer.transform.OfType<Transform>().ToList())
         {
@@ -166,7 +161,7 @@ public class Gameplay : MonoBehaviour
     public void RemoveSymbol(string symbol)
     {
 
-        Symbols.Remove(symbol);
+        CurrentSymbols.Remove(symbol);
 
         foreach (var checkpointSymbol in CheckpointSymbolContainer.transform.OfType<Transform>().ToList())
         {
@@ -181,6 +176,10 @@ public class Gameplay : MonoBehaviour
 
     }
 
+    #endregion
+
+
+    #region gameflow
 
     public void NextCheckpoint()
     {
@@ -209,12 +208,14 @@ public class Gameplay : MonoBehaviour
         ContinueGame();
     }
 
-    public void WinGame() {
+    public void WinGame()
+    {
         GetComponent<ShipController>().Pause();
         WinGameContainer.SetActive(true);
     }
 
-    public void NextLevel() {
+    public void NextLevel()
+    {
 
 
         PlayerPrefs.SetInt("CurrentLevel", ++currentLevel);
@@ -231,7 +232,8 @@ public class Gameplay : MonoBehaviour
     }
 
 
-    private void SaveLastLevel() {
+    private void SaveLastLevel()
+    {
         if (currentLevel > PlayerPrefs.GetInt("LastLevel", 1))
         {
             PlayerPrefs.SetInt("LastLevel", currentLevel);
@@ -265,5 +267,7 @@ public class Gameplay : MonoBehaviour
     {
         Application.LoadLevel("menu");
     }
+    #endregion
+
 
 }
