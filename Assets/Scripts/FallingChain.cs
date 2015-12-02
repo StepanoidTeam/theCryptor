@@ -19,7 +19,7 @@ public class FallingChain : MonoBehaviour
     void Start()
     {
         checkpointSymbols = GetComponentInParent<Gameplay>();
-
+        return;
         RemoveAllSymbols();
         StartCoroutine(AddSymbols());
     }
