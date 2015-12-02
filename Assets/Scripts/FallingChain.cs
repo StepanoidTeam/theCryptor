@@ -20,7 +20,7 @@ public class FallingChain : MonoBehaviour
     {
         checkpointSymbols = GetComponentInParent<Gameplay>();
 
-
+        RemoveAllSymbols();
         StartCoroutine(AddSymbols());
     }
 
@@ -50,11 +50,15 @@ public class FallingChain : MonoBehaviour
 
     private void LastSymbol_OnFade(GameObject sender)
     {
+        RemoveAllSymbols();
+        Start();
+    }
+
+    private void RemoveAllSymbols() {
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
-        Start();
     }
 
     GameObject AddSymbol(string symbol)
