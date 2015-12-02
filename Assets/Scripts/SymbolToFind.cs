@@ -3,9 +3,6 @@ using System.Collections;
 
 public class SymbolToFind : MonoBehaviour {
 
-    public bool IsEnabled { get; set; }
-    public bool IsCurrent { get; set; }
-
     public string Text
     {
         get
@@ -20,10 +17,27 @@ public class SymbolToFind : MonoBehaviour {
     
 
     UnityEngine.UI.Text textBox;
+    Animator animator;
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         textBox = GetComponentInChildren<UnityEngine.UI.Text>();
+
     }
-    
+
+    public void Open() {
+        animator.SetTrigger("Open");
+    }
+
+    public void Activate()
+    {
+        animator.SetTrigger("Activate");
+    }
+
+    public void Close()
+    {
+        animator.SetTrigger("Close");
+    }
+
 }

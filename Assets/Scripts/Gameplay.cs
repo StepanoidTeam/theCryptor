@@ -24,7 +24,7 @@ public class Gameplay : MonoBehaviour
 
     public int SymbolCount = 1;
 
-
+    ISymbolProvider symbolProvider;
 
     int CheckpointCount = 3;
 
@@ -33,6 +33,9 @@ public class Gameplay : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+        symbolProvider = GetComponent<ISymbolProvider>();
+
         currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
 
         StartLevel(currentLevel);
@@ -80,7 +83,7 @@ public class Gameplay : MonoBehaviour
         var gates = CheckpointGateContainer.transform.OfType<Transform>().ToList();
         var firstGate = gates.FirstOrDefault();
 
-        firstGate.GetComponent<Animator>().SetBool("IsOpen", true);
+        firstGate.GetComponent<Animator>().SetTrigger("Open");
         Destroy(firstGate.gameObject, 1f);
 
         if (gates.Count <= 1)
@@ -95,18 +98,10 @@ public class Gameplay : MonoBehaviour
     #region symbols
     void GenerateSymbols()
     {
-        var alphabet = new List<string>() { "A", "B", "C", "D", "E", "F", "G", "H", "X", "Y", "Z" };
         for (var i = 0; i < SymbolCount; i++)
         {
-            var symbolIndex = Random.Range(0, alphabet.Count);
-
-            var symbol = alphabet[symbolIndex];
-            alphabet.RemoveAt(symbolIndex);
-
-            AddSymbol(symbol);
-
+            AddSymbol(symbolProvider.GetSymbol());
         }
-        // yield return null;
     }
 
     void AddSymbol(string symbol)
@@ -119,7 +114,6 @@ public class Gameplay : MonoBehaviour
         stfGo.transform.localScale = new Vector3(1, 1, 1);
 
         stfGo.Text = symbol;
-        //return stfGo;
     }
 
     internal string GetRandomSymbol()
@@ -169,7 +163,9 @@ public class Gameplay : MonoBehaviour
 
             if (es.Text == symbol)
             {
-                Destroy(es.gameObject);
+                es.Close();
+                
+                //Destroy(es.gameObject);
                 break;
             }
         }
@@ -185,9 +181,8 @@ public class Gameplay : MonoBehaviour
     {
         SymbolCount++;
         RemoveGate();
+        RemoveAllSymbols();
         GenerateSymbols();
-
-
     }
 
     public void StartLevel(int levelNumber)
