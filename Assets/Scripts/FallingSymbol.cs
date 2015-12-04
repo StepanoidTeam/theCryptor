@@ -31,12 +31,13 @@ public class FallingSymbol : MonoBehaviour
     Gameplay checkpointSymbols;
     UnityEngine.UI.Text textBox;
 
-    void Awake()
+    void Start()
     {
         checkpointSymbols = GetComponentInParent<Gameplay>();
         textBox = GetComponent<UnityEngine.UI.Text>();
     }
 
+    
 
     void SymbolAnimationEnd()
     {
