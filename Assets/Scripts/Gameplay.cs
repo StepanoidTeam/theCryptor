@@ -120,7 +120,7 @@ public class Gameplay : MonoBehaviour
     {
         if (CurrentSymbols.Count > 0)
         {
-            return CurrentSymbols[Random.Range(0, CurrentSymbols.Count - 1)];
+            return CurrentSymbols[Random.Range(0, CurrentSymbols.Count)];
         }
         return "Error";//todo: throw ex instead
     }

@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 0eae7e45dcce01c4cb8876275d9391f5
-timeCreated: 1448908845
+guid: f54ad910ff0341740bdf8952da24a725
+timeCreated: 1449098097
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 2
-  fontSize: 60
-  forceTextureCase: -2
+  fontSize: 100
+  forceTextureCase: 3
   characterSpacing: 1
   characterPadding: 0
   includeFontData: 1
   use2xBehaviour: 0
   fontNames: []
   fallbackFontReferences: []
-  customCharacters: ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890:.#lv
-  fontRenderingMode: 0
+  customCharacters: ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#$@
+  fontRenderingMode: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -20,6 +20,7 @@ public class GyroParallax : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Input.gyro.enabled = true;
         if (Input.gyro.enabled)
         {
             float initialOrientationX = Input.gyro.rotationRateUnbiased.x;
