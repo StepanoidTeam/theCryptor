@@ -11,11 +11,13 @@ public class BackgroundSymbolProvider : MonoBehaviour, ISymbolProvider
     public float chance;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         alphabet = new List<string>() {
-            "1","2","3","4","5",
-            "6","7","8","9","0",
+            //"$"
+            "0","1",
+            //"1","2","3","4","5",
+            //"6","7","8","9","0",
         };
 
 
