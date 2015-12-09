@@ -25,7 +25,7 @@ public class GameMenu : MonoBehaviour
     public void StartNewGame()
     {
         
-        var lastLevel = PlayerPrefs.GetInt("LastLevel", 1);
+        var lastLevel = PlayerPrefs.GetInt("game.lastlevel", 1);
 
         PlayerPrefs.SetInt("CurrentLevel", lastLevel);
 

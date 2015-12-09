@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Options : MonoBehaviour {
+public class Options : MonoBehaviour
+{
 
 
     public UnityEngine.UI.Text ProgressText;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         ShowProgress();
     }
 
@@ -29,13 +31,17 @@ public class Options : MonoBehaviour {
 
     }
 
-    public void ResetProgress() {
+    public void ResetProgress()
+    {
 
-        PlayerPrefs.SetInt("LastLevel", 1);
+        PlayerPrefs.SetInt("game.lastlevel", 1);
         ShowProgress();
     }
 
-    public void ShowProgress() {
-        ProgressText.text = PlayerPrefs.GetInt("LastLevel", 1).ToString();
+    public void ShowProgress()
+    {
+        ProgressText.text = PlayerPrefs.GetInt("game.lastlevel", 1).ToString();
     }
+
+    
 }

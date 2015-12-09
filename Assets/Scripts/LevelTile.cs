@@ -29,33 +29,9 @@ public class LevelTile : MonoBehaviour
         textbox = GetComponentInChildren<UnityEngine.UI.Text>();
 
 
-
-
-
-        //DynamicGI.SetEmissive(GetComponent<Renderer>(), new Color(0f, 0f, 0f, 0f) * 0f);
-
-        //material = renderer.sharedMaterial;
-        //material.SetFloat("_EMMISIVE", 1.0f);
-        //can be set in the inspector
-
-
-
-        Enabled = LevelNumber <= PlayerPrefs.GetInt("LastLevel", 1);
+        Enabled = LevelNumber <= PlayerPrefs.GetInt("game.lastlevel", 1);
 
         textbox.text = Enabled ? LevelNumber.ToString() : string.Empty;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //material.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
-
-
-
-
-        //material.SetColor("_EmissionColor", Color.red);
-        //DynamicGI.UpdateMaterials(renderer);
-        //DynamicGI.UpdateEnvironment();
     }
 
 

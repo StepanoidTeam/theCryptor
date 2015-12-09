@@ -229,9 +229,9 @@ public class Gameplay : MonoBehaviour
 
     private void SaveLastLevel()
     {
-        if (currentLevel > PlayerPrefs.GetInt("LastLevel", 1))
+        if (currentLevel > PlayerPrefs.GetInt("game.lastlevel", 1))
         {
-            PlayerPrefs.SetInt("LastLevel", currentLevel);
+            PlayerPrefs.SetInt("game.lastlevel", currentLevel);
         }
     }
 

@@ -7,7 +7,7 @@ public class ChangeTextWithSlider : MonoBehaviour {
     public Text textLabel;
     public Slider optionsSlider;
 
-    void Start() {
+    void Awake() {
         SetTextLabel();
     }
 

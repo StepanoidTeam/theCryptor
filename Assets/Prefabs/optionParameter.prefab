@@ -92,7 +92,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22482640}
+<<<<<<< f4010b7c931c55be6371bbf627b9a7e043c227c9
   - 114: {fileID: 11461572}
+=======
+  - 114: {fileID: 11454664}
+>>>>>>> options paramter prefab impl in progress
   m_Layer: 5
   m_Name: optionParameter
   m_TagString: Untagged
@@ -291,7 +295,11 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+<<<<<<< f4010b7c931c55be6371bbf627b9a7e043c227c9
 --- !u!114 &11461572
+=======
+--- !u!114 &11454664
+>>>>>>> options paramter prefab impl in progress
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -302,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bf3736cb8338945846cc143eda92f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< f4010b7c931c55be6371bbf627b9a7e043c227c9
   ParameterName: Parallax
   Text: 
   sliderMinValue: 0
@@ -311,6 +320,12 @@ MonoBehaviour:
   paramNameTextbox: {fileID: 11496504}
   paramValueTextbox: {fileID: 11410644}
   paramValueSlider: {fileID: 11485214}
+=======
+  Text: 
+  ParameterName: 
+  MinValue: 0
+  MaxValue: 0
+>>>>>>> options paramter prefab impl in progress
 --- !u!114 &11467736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,7 +395,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 50
   m_WholeNumbers: 1
-  m_Value: 5
+  m_Value: 37
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -394,7 +409,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11496504
