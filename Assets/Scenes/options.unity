@@ -381,7 +381,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11496504, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: m_Text
-      value: Blur Iter.
+      value: Parameter
       objectReference: {fileID: 0}
     - target: {fileID: 11485214, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: m_MinValue
@@ -406,6 +406,22 @@ Prefab:
     - target: {fileID: 11485214, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: ParameterName
+      value: Blur Iter.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: sliderMinValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: sliderMaxValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: sliderValue
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
@@ -768,7 +784,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11496504, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: m_Text
-      value: Blur Size
+      value: Parameter
       objectReference: {fileID: 0}
     - target: {fileID: 11485214, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: m_MaxValue
@@ -789,6 +805,22 @@ Prefab:
     - target: {fileID: 11485214, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: ParameterName
+      value: Blur Size
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: sliderMaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: sliderValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: switchWholeNumders
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
@@ -1138,17 +1170,13 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11485214, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1988294722}
-    - target: {fileID: 11485214, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetTextLabel
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: switchWholeNumders
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11485214, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: Text
+      value: Parallax
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
@@ -1270,7 +1298,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11496504, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: m_Text
-      value: Symbols
+      value: Parameter
       objectReference: {fileID: 0}
     - target: {fileID: 11485214, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: m_Value
@@ -1295,6 +1323,22 @@ Prefab:
     - target: {fileID: 11485214, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: ParameterName
+      value: Symbols
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: sliderMinValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: sliderMaxValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: sliderValue
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
@@ -1564,12 +1608,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1744696610}
---- !u!114 &1988294722 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11421532, guid: 8b863206898f5ac4c8be5e6d227a4da9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1337322590}
-  m_Script: {fileID: 11500000, guid: dd978fd0664ee5942aaf368ef78b4241, type: 3}
 --- !u!1 &2028259442
 GameObject:
   m_ObjectHideFlags: 0

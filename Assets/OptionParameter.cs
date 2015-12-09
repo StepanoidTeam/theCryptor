@@ -1,19 +1,28 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class OptionParameter : MonoBehaviour
 {
-    public string Text;
     public string ParameterName;
 
-    UnityEngine.UI.Text paramNameTextbox;
-    UnityEngine.UI.Text paramValueTextbox;
-    UnityEngine.UI.Slider paramValueSlider;
+    public string Text;
+
+    public float sliderMinValue;
+    public float sliderMaxValue;
+    public float sliderValue;
+    public bool switchWholeNumders;
+
+    public Text paramNameTextbox;
+    public Text paramValueTextbox;
+    public Slider paramValueSlider;
 
     
 
     void Awake() {
-       
+        //paramNameTextbox = GetComponentInChildren<Text>();
+        SetNameTextbox();
+        SetSlider();
     }
 
     // Use this for initialization
@@ -25,6 +34,18 @@ public class OptionParameter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    void SetNameTextbox() {
+        paramNameTextbox.text = ParameterName;
+    }
+
+    void SetSlider() {
+        paramValueSlider.maxValue = sliderMaxValue;
+        paramValueSlider.minValue = sliderMinValue;
+        paramValueSlider.value = sliderValue;
+        paramValueSlider.wholeNumbers = switchWholeNumders;
 
     }
 
