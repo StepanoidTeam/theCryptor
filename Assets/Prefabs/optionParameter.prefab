@@ -223,7 +223,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 99
+  m_Text: 5
 --- !u!114 &11421532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,14 +302,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bf3736cb8338945846cc143eda92f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParameterName: Parallax
-  Text: 
-  sliderMinValue: 0
-  sliderMaxValue: 50
-  sliderValue: 5
-  switchWholeNumders: 1
+  Text: param text
+  Key: 
+  MinValue: 0
+  MaxValue: 2
+  DefaultValue: 1
+  SwitchWholeNumbers: 0
   paramNameTextbox: {fileID: 11496504}
-  paramValueTextbox: {fileID: 11410644}
   paramValueSlider: {fileID: 11485214}
 --- !u!114 &11467736
 MonoBehaviour:
@@ -394,7 +393,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11496504

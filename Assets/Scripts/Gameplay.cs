@@ -26,8 +26,6 @@ public class Gameplay : MonoBehaviour
 
     ISymbolProvider symbolProvider;
 
-    int CheckpointCount = 3;
-
     int currentLevel = 1;
 
     // Use this for initialization

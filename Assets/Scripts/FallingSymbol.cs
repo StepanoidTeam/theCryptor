@@ -52,7 +52,7 @@ public class FallingSymbol : MonoBehaviour
     {
         if (!IsClickable) return;
 
-        PointerEventData ped = (PointerEventData)data;
+        //PointerEventData ped = (PointerEventData)data;
 
 
         if (checkpointSymbols.CheckSymbol(SymbolText))

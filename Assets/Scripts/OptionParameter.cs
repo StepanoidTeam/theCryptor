@@ -2,62 +2,66 @@
 using UnityEngine.UI;
 using System.Collections;
 
+
 public class OptionParameter : MonoBehaviour
 {
 
     public string Text;
-    public string ParameterName;
+    public string Key;
 
-    public float sliderMinValue;
-    public float sliderMaxValue;
-    public float sliderValue;
-    public bool switchWholeNumders;
+    public float MinValue;
+    public float MaxValue;
+    public float DefaultValue;
+
+    public bool SwitchWholeNumbers;
 
     public Text paramNameTextbox;
-    public Text paramValueTextbox;
     public Slider paramValueSlider;
-
-    public float DefaultValue;
 
 
     void Awake()
     {
-        SetNameTextbox();
+        SetTextboxName();
         SetSlider();
-        GetParameter();
     }
 
-    void SetNameTextbox()
+    void SetTextboxName()
     {
-        paramNameTextbox.text = ParameterName;
+        paramNameTextbox.text = Text;
     }
 
     void SetSlider()
     {
-        paramValueSlider.maxValue = sliderMaxValue;
-        paramValueSlider.minValue = sliderMinValue;
-        paramValueSlider.value = sliderValue;
-        paramValueSlider.wholeNumbers = switchWholeNumders;
+        paramValueSlider.maxValue = MaxValue;
+        paramValueSlider.minValue = MinValue;
+        paramValueSlider.wholeNumbers = SwitchWholeNumbers;
+        LoadParameterValue();
     }
 
     public void OnDestroy()
     {
-        SetParameter();
+        SaveParameterValue();
     }
 
-    public void SetParameter()
+    public void SaveParameterValue()
     {
-        PlayerPrefs.SetFloat(ParameterName, paramValueSlider.value);
+        PlayerPrefs.SetFloat(Key, paramValueSlider.value);
     }
 
-    public void GetParameter()
+    public void LoadParameterValue()
     {
-        paramValueSlider.value = PlayerPrefs.GetFloat(ParameterName, DefaultValue);
+        paramValueSlider.value = PlayerPrefs.GetFloat(Key, DefaultValue);
     }
 
-    public void ResetParameter()
+    public void ResetParameterValue()
     {
-        PlayerPrefs.SetFloat(ParameterName, DefaultValue);
-        GetParameter();
+        PlayerPrefs.SetFloat(Key, DefaultValue);
+        LoadParameterValue();
+    }
+
+    
+    public void OnGUI()
+    {
+        Debug.Log("ongui");
     }
 }

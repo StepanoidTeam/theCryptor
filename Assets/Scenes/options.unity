@@ -423,6 +423,30 @@ Prefab:
       propertyPath: sliderValue
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: Text
+      value: Blur Iter.
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: Key
+      value: bgsymbols.blur.iterations
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: MaxValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: DefaultValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: MinValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: SwitchWholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
   m_IsPrefabParent: 0
@@ -822,6 +846,26 @@ Prefab:
       propertyPath: switchWholeNumders
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: DefaultValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: Text
+      value: Blur Size
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: Key
+      value: bgsymbols.blur.size
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: SwitchWholeNumbers
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
   m_IsPrefabParent: 0
@@ -1171,12 +1215,24 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
-      propertyPath: switchWholeNumders
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: Text
       value: Parallax
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: Key
+      value: bgsymbols.parallaxspeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: MaxValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: DefaultValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: SwitchWholeNumbers
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
@@ -1338,6 +1394,30 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
       propertyPath: sliderValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: Text
+      value: Symbols in row
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: Key
+      value: symbols.inrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: MinValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: MaxValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: DefaultValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11461572, guid: 8b863206898f5ac4c8be5e6d227a4da9, type: 2}
+      propertyPath: SwitchWholeNumbers
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -41,7 +41,7 @@ public class PlayableSymbolProvider : MonoBehaviour, ISymbolProvider
         {
             var symbolIndex = UnityEngine.Random.Range(0, alphabet.Count);
 
-            var symbol = alphabet[symbolIndex];
+            //var symbol = alphabet[symbolIndex];
             alphabet.RemoveAt(symbolIndex);
 
             //AddSymbol(symbol);
