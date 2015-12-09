@@ -4,9 +4,9 @@ using System.Collections;
 
 public class OptionParameter : MonoBehaviour
 {
-    public string ParameterName;
 
     public string Text;
+    public string ParameterName;
 
     public float sliderMinValue;
     public float sliderMaxValue;
@@ -17,47 +17,47 @@ public class OptionParameter : MonoBehaviour
     public Text paramValueTextbox;
     public Slider paramValueSlider;
 
-    
+    public float DefaultValue;
 
-    void Awake() {
-        //paramNameTextbox = GetComponentInChildren<Text>();
+
+    void Awake()
+    {
         SetNameTextbox();
         SetSlider();
+        GetParameter();
     }
 
-    // Use this for initialization
-    void Start()
+    void SetNameTextbox()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void SetNameTextbox() {
         paramNameTextbox.text = ParameterName;
     }
 
-    void SetSlider() {
+    void SetSlider()
+    {
         paramValueSlider.maxValue = sliderMaxValue;
         paramValueSlider.minValue = sliderMinValue;
         paramValueSlider.value = sliderValue;
         paramValueSlider.wholeNumbers = switchWholeNumders;
+    }
 
+    public void OnDestroy()
+    {
+        SetParameter();
     }
 
     public void SetParameter()
     {
-
-        //PlayerPrefs.SetInt("LastLevel", 1);
-        //ShowProgress();
+        PlayerPrefs.SetFloat(ParameterName, paramValueSlider.value);
     }
 
     public void GetParameter()
     {
-        //ProgressText.text = PlayerPrefs.GetInt("LastLevel", 1).ToString();
+        paramValueSlider.value = PlayerPrefs.GetFloat(ParameterName, DefaultValue);
+    }
+
+    public void ResetParameter()
+    {
+        PlayerPrefs.SetFloat(ParameterName, DefaultValue);
+        GetParameter();
     }
 }
