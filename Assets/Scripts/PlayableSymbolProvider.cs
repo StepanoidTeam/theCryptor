@@ -8,12 +8,15 @@ public class PlayableSymbolProvider : MonoBehaviour, ISymbolProvider
 
     List<string> alphabet;
 
-    public int SymbolsPerCell = 1;
-    public float chance;
+    public int SymbolsPerCell;
+    //public float chance;
 
     // Use this for initialization
     void Awake()
     {
+        SymbolsPerCell = (int) PlayerPrefs.GetFloat("symbols.percell", 1f);
+
+
         alphabet = new List<string>() {
             "A", "B", "C", "D", "E",
             "F", "G", "H","I","J",

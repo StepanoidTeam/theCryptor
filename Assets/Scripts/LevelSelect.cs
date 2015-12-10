@@ -22,7 +22,7 @@ public class LevelSelect : MonoBehaviour {
 
     public void BackToMainMenu() {
 
-        Application.LoadLevel("menu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("menu");
 
     }
 }

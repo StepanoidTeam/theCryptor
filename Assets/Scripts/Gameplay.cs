@@ -34,7 +34,7 @@ public class Gameplay : MonoBehaviour
 
         symbolProvider = GetComponent<ISymbolProvider>();
 
-        currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
+        currentLevel = (int)PlayerPrefs.GetFloat("game.currentlevel", 1);
 
         StartLevel(currentLevel);
     }
@@ -211,8 +211,8 @@ public class Gameplay : MonoBehaviour
     {
 
 
-        PlayerPrefs.SetInt("CurrentLevel", ++currentLevel);
-        Application.LoadLevel("gameplay");
+        PlayerPrefs.SetFloat("game.currentlevel", ++currentLevel);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("gameplay");
     }
 
 
@@ -227,9 +227,9 @@ public class Gameplay : MonoBehaviour
 
     private void SaveLastLevel()
     {
-        if (currentLevel > PlayerPrefs.GetInt("game.lastlevel", 1))
+        if (currentLevel > PlayerPrefs.GetFloat("game.lastlevel", 1))
         {
-            PlayerPrefs.SetInt("game.lastlevel", currentLevel);
+            PlayerPrefs.SetFloat("game.lastlevel", currentLevel);
         }
     }
 

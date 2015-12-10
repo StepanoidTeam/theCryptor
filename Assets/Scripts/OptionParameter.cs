@@ -58,10 +58,4 @@ public class OptionParameter : MonoBehaviour
         PlayerPrefs.SetFloat(Key, DefaultValue);
         LoadParameterValue();
     }
-
-    
-    public void OnGUI()
-    {
-        Debug.Log("ongui");
-    }
 }

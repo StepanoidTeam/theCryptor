@@ -1,17 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Options : MonoBehaviour
 {
-
-
-    public UnityEngine.UI.Text ProgressText;
-    // Use this for initialization
-    void Start()
-    {
-        ShowProgress();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -27,21 +18,8 @@ public class Options : MonoBehaviour
     public void BackToMainMenu()
     {
 
-        Application.LoadLevel("menu");
+        SceneManager.LoadScene("menu");
 
     }
-
-    public void ResetProgress()
-    {
-
-        PlayerPrefs.SetInt("game.lastlevel", 1);
-        ShowProgress();
-    }
-
-    public void ShowProgress()
-    {
-        ProgressText.text = PlayerPrefs.GetInt("game.lastlevel", 1).ToString();
-    }
-
     
 }

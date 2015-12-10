@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class LevelTile : MonoBehaviour
 {
 
@@ -29,7 +30,7 @@ public class LevelTile : MonoBehaviour
         textbox = GetComponentInChildren<UnityEngine.UI.Text>();
 
 
-        Enabled = LevelNumber <= PlayerPrefs.GetInt("game.lastlevel", 1);
+        Enabled = LevelNumber <= PlayerPrefs.GetFloat("game.lastlevel", 1);
 
         textbox.text = Enabled ? LevelNumber.ToString() : string.Empty;
     }
@@ -40,8 +41,8 @@ public class LevelTile : MonoBehaviour
         if (Enabled)
         {
 
-            PlayerPrefs.SetInt("CurrentLevel", LevelNumber);
-            Application.LoadLevel("gameplay");
+            PlayerPrefs.SetFloat("game.currentlevel", LevelNumber);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("gameplay");//scene.LoadLevel
         }
     }
 

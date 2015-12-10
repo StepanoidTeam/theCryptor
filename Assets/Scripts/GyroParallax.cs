@@ -3,17 +3,19 @@ using System.Collections;
 
 public class GyroParallax : MonoBehaviour
 {
-
-
-
-    public float speed = 1f;
-    Vector3 acceleration;
-
-    Vector3 basicPosition;
+    float speed;
 
     // Use this for initialization
     void Start()
     {
+        speed = PlayerPrefs.GetFloat("bgsymbols.parallaxspeed", 1f);
+
+        //todo: move blur props to separate scirpt?
+
+        var blur = GetComponent<UnityStandardAssets.ImageEffects.BlurOptimized>();
+
+        blur.blurIterations = (int)PlayerPrefs.GetFloat("bgsymbols.blur.iterations", 1f);
+        blur.blurSize = PlayerPrefs.GetFloat("bgsymbols.blur.size", 1f);
 
     }
 
@@ -26,15 +28,11 @@ public class GyroParallax : MonoBehaviour
             float initialOrientationX = Input.gyro.rotationRateUnbiased.x;
             float initialOrientationY = Input.gyro.rotationRateUnbiased.y;
 
-            acceleration = new Vector3(-initialOrientationY, initialOrientationX);
-        }
-        else
-        {
-            //basicPosition = Camera.main.ScreenToViewportPoint(Input.mousePosition) - new Vector3(0.5f, 0.5f);
+            Vector3 acceleration = new Vector3(-initialOrientationY, initialOrientationX);
 
-           // acceleration = Vector3.Lerp(basicPosition, acceleration , Time.deltaTime);
+            transform.Translate(acceleration * speed);
         }
 
-        transform.Translate(acceleration * speed);
+
     }
 }

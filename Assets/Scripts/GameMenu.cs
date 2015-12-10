@@ -25,21 +25,21 @@ public class GameMenu : MonoBehaviour
     public void StartNewGame()
     {
         
-        var lastLevel = PlayerPrefs.GetInt("game.lastlevel", 1);
+        var lastLevel = PlayerPrefs.GetFloat("game.lastlevel", 1);
 
-        PlayerPrefs.SetInt("CurrentLevel", lastLevel);
+        PlayerPrefs.SetFloat("game.currentlevel", lastLevel);
 
-        Application.LoadLevel("gameplay");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("gameplay");
     }
 
 
     public void ShowLevelMenu()
     {
-        Application.LoadLevel("levels");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("levels");
     }
 
     public void ShowOptions() {
-        Application.LoadLevel("options");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("options");
     }
     
     
