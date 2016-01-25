@@ -37,13 +37,14 @@ public class FallingSymbol : MonoBehaviour
         textBox = GetComponent<UnityEngine.UI.Text>();
     }
 
-    
+
 
     void SymbolAnimationEnd()
     {
+        IsClickable = false;
+
         if (OnFade != null)
         {
-            IsClickable = false;
             OnFade(gameObject);
         }
     }
@@ -68,12 +69,19 @@ public class FallingSymbol : MonoBehaviour
 
     }
 
+    void Destroy()
+    {
+        gameObject.SetActive(false);
+    }
 
     void DisplayDestroyEffectOn(GameObject go)
     {
         var effect = Instantiate(DestroyEffect);
         effect.transform.position = go.transform.position + new Vector3(0, 0, -10);
-        Destroy(go.gameObject, 1f);
+        //Destroy(go.gameObject, 1f);
+        textBox.text = "";
+        //Destroy();
+
         Destroy(effect.gameObject, 1f);
     }
 

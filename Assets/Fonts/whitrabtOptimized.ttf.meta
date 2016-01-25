@@ -5,15 +5,16 @@ licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 2
   fontSize: 100
-  forceTextureCase: 3
+  forceTextureCase: -2
   characterSpacing: 1
   characterPadding: 0
   includeFontData: 1
   use2xBehaviour: 0
   fontNames: []
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0eae7e45dcce01c4cb8876275d9391f5, type: 3}
   customCharacters: ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890#$@
-  fontRenderingMode: 2
+  fontRenderingMode: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

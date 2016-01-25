@@ -16,10 +16,11 @@ public class FallingChain : MonoBehaviour
 
     Gameplay checkpointSymbols;
 
+
+
     // Use this for initialization
     void Start()
     {
-        //symbolProvider = GetComponent<ISymbolProvider>();
         symbolProvider = GetComponentsInParent<ISymbolProvider>()[0];
 
         checkpointSymbols = GetComponentInParent<Gameplay>();
@@ -36,6 +37,10 @@ public class FallingChain : MonoBehaviour
         }
     }
 
+    void OnLastSymbolFade(object sender) {
+        RemoveAllSymbols();
+        Start();
+    }
 
     IEnumerator AddSymbols()
     {
@@ -48,11 +53,11 @@ public class FallingChain : MonoBehaviour
             yield return new WaitForSeconds(DelayBetweenSymbols);
         }
 
-        currentSymbol.GetComponent<FallingSymbol>().OnFade += (sender) =>
-        {
-            RemoveAllSymbols();
-            Start();
-        };
+        yield return new WaitForSeconds(2);
+
+        OnLastSymbolFade(null);
+        //currentSymbol.GetComponent<FallingSymbol>().OnFade -= OnLastSymbolFade;
+        //currentSymbol.GetComponent<FallingSymbol>().OnFade += OnLastSymbolFade;
     }
 
 
@@ -60,19 +65,30 @@ public class FallingChain : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            Destroy(child.gameObject);
+
+            //Destroy(child.gameObject);
+            child.gameObject.SetActive(false);
+
         }
     }
 
     GameObject AddFallingSymbol(string symbol)
     {
-        var go = Instantiate(SymbolGo);
+
+        //var go = Instantiate(SymbolGo);
+        var go = ObjectPooler.instance.GetPooledObject();
+
+
         var txt = go.GetComponent<Text>();
         txt.rectTransform.SetParent(gameObject.transform);
         txt.text = symbol;
         txt.transform.localPosition = gameObject.transform.localPosition;
-        go.transform.localScale = new Vector3(1, 1, 1);
-        txt.rectTransform.localScale = new Vector3(1, 1, 1);
+
+        var fs = go.GetComponent<FallingSymbol>();
+        fs.IsClickable = true;
+
+        go.SetActive(true);
+        
 
         return go;
     }
