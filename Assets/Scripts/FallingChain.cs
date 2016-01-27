@@ -37,7 +37,8 @@ public class FallingChain : MonoBehaviour
         }
     }
 
-    void OnLastSymbolFade(object sender) {
+    void OnLastSymbolFade(object sender)
+    {
         RemoveAllSymbols();
         Start();
     }
@@ -79,16 +80,29 @@ public class FallingChain : MonoBehaviour
         var go = ObjectPooler.instance.GetPooledObject();
 
 
+        //for text elem
         var txt = go.GetComponent<Text>();
-        txt.rectTransform.SetParent(gameObject.transform);
-        txt.text = symbol;
-        txt.transform.localPosition = gameObject.transform.localPosition;
+        if (txt != null)
+        {
+            txt.rectTransform.SetParent(gameObject.transform);
+
+            txt.text = symbol;
+            txt.transform.localPosition = gameObject.transform.localPosition;
+        }
+        //for img stub
+        var img = go.GetComponent<Image>();
+        if (img != null) {
+            img.rectTransform.SetParent(gameObject.transform);
+            img.transform.localPosition = gameObject.transform.localPosition;
+        }
+
+
 
         var fs = go.GetComponent<FallingSymbol>();
         fs.IsClickable = true;
 
         go.SetActive(true);
-        
+
 
         return go;
     }
